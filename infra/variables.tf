@@ -3,5 +3,5 @@ variable "environment" {
 }
 
 variable "revision" {
-  type    = string
+  type = string
 }

@@ -118,7 +118,7 @@ resource "aws_ecs_service" "curology_service" {
     ]
 
     security_groups = [
-      aws_security_group.curology_ecs_security_group.id    
+      aws_security_group.curology_ecs_security_group.id
     ]
   }
 }
@@ -179,7 +179,7 @@ resource "aws_appautoscaling_policy" "curology_scaling_policy" {
   service_namespace  = aws_appautoscaling_target.curology_scaling_target.service_namespace
 
   target_tracking_scaling_policy_configuration {
-    target_value       = 75.0
+    target_value = 75.0
     predefined_metric_specification {
       predefined_metric_type = "ECSServiceAverageCPUUtilization"
     }
@@ -199,7 +199,7 @@ resource "aws_vpc_endpoint" "ecr_dkr" {
   subnet_ids        = module.vpc.public_subnets
 
   security_group_ids = [
-    aws_security_group.curology_ecs_security_group.id    
+    aws_security_group.curology_ecs_security_group.id
   ]
 
   private_dns_enabled = true
@@ -215,7 +215,7 @@ resource "aws_vpc_endpoint" "ecr_api" {
   subnet_ids        = module.vpc.public_subnets
 
   security_group_ids = [
-    aws_security_group.curology_ecs_security_group.id    
+    aws_security_group.curology_ecs_security_group.id
   ]
 
   private_dns_enabled = true
@@ -231,7 +231,7 @@ resource "aws_vpc_endpoint" "logs" {
   subnet_ids        = module.vpc.public_subnets
 
   security_group_ids = [
-    aws_security_group.curology_ecs_security_group.id    
+    aws_security_group.curology_ecs_security_group.id
   ]
 
   private_dns_enabled = true
@@ -247,7 +247,7 @@ resource "aws_vpc_endpoint" "ssm" {
   subnet_ids        = module.vpc.public_subnets
 
   security_group_ids = [
-    aws_security_group.curology_ecs_security_group.id    
+    aws_security_group.curology_ecs_security_group.id
   ]
 
   private_dns_enabled = true
@@ -263,7 +263,7 @@ resource "aws_vpc_endpoint" "secretsmanager" {
   subnet_ids        = module.vpc.public_subnets
 
   security_group_ids = [
-    aws_security_group.curology_ecs_security_group.id    
+    aws_security_group.curology_ecs_security_group.id
   ]
 
   private_dns_enabled = true

@@ -44,7 +44,7 @@ module "db" {
   apply_immediately                   = true
   publicly_accessible                 = true
   deletion_protection                 = true
-  manage_master_user_password         = true 
+  manage_master_user_password         = true
   iam_database_authentication_enabled = false
 
   vpc_security_group_ids = [
