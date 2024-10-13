@@ -1,5 +1,5 @@
 # Local .terraform directories
-infra/terraform/
+infra/.terraform/
 **/.terraform/*
 
 # Terraform variable files with sensitive information
