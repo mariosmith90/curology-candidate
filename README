@@ -1,0 +1,47 @@
+# Project Overview
+
+This repository contains infrastructure and application code for deploying and managing a cloud-native service. The project uses **Terraform** for infrastructure as code (IaC), **Docker** for containerization, and **Flask** for building a simple Python web application.
+
+## Setup
+
+### 1. **Install Dependencies**
+Ensure Docker and Terraform are installed on your machine.
+
+- Docker: [Install Docker](https://docs.docker.com/get-docker/)
+- Terraform: [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+### 2. **Run Docker Compose**
+To start the application locally, run the following command to build and start the containers:
+
+```bash
+docker-compose up --build
+```
+
+This will start the Flask application on `http://localhost:3000` and a PostgreSQL database.
+
+### 3. **Deploy Infrastructure with Terraform**
+Terraform can be used to provision cloud infrastructure resources (e.g., ECS tasks, VPCs, databases). To deploy:
+
+```bash
+terraform init
+terraform apply -var=revision=v1.0 -var-file="dev.tfvars"
+```
+
+### Revision value would be passed by way of some .github action workflow during release. The value used here should coincide and
+### iterate as subsequent releases are determined and versioned by the team or some automated versioning process. 
+
+Make sure to configure the correct provider and credentials (e.g., AWS) in the `provider.tf` file.
+
+### 4. **Run Load Tests**
+You can use the `loadtest.yml` file to simulate traffic and test the scaling capabilities of your application. Artillery or similar tools can be used to perform the load testing. This process would ideally be implemented in a github actions or CI workflow, providing performance metrics throughout the development process.
+
+```bash
+artillery run loadtest.yml
+```
+
+## Additional Notes
+
+- **Database Connectivity**: The `helloworld.py` Flask app connects to the PostgreSQL database and performs a basic query. Ensure the `DB_HOST`, `DB_USER`, and `DB_PASSWORD` environment variables are set correctly.
+- **Gevent Workers**: The application uses asynchronous `gevent` workers for handling multiple concurrent connections efficiently. This enhances the app's ability to scale and handle higher loads in production environments.
+
+---

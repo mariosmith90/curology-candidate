@@ -1,7 +1,6 @@
 ###################################################################################################################
 ##### This Docker Compose file can be used for locally testing the web server's connection with the database.######
 ##### It's for experimental use only and an integrated or live testing environment should replace this process.####
-##### But for the sake of this exercise Docker Compose was used. ##################################################
 ###################################################################################################################
 version: '3.8'
 
