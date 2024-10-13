@@ -1,7 +1,7 @@
 # Ignore infra directory
 infra/
 
-# Ignore the following application files
+# Ignore the following files
 bootstrap.py
 docker-compose.yml
 loadtest.yml
