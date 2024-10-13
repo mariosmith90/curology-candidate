@@ -1,0 +1,14 @@
+config:
+  target: "http://0.0.0.0:3000" 
+  phases:
+    - duration: 3000
+      arrivalRate: 100
+      rampTo: 500
+  defaults:
+    headers:
+      content-type: "application/json"
+
+scenarios:
+  - flow:
+      - get:
+          url: "/"

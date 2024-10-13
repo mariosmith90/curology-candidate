@@ -1,0 +1,6 @@
+# requirements.txt
+Flask
+psycopg2
+gunicorn
+gevent>=1.4
+Flask-SQLAlchemy
