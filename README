@@ -109,5 +109,8 @@ This repository includes a basic load testing configuration. The test simulates 
 
 - **Security**: Secrets for the database are stored in AWS Secrets Manager for enhanced security. IAM roles and policies are in place to control access to resources.
 - **Future Enhancements**:
-  - Implementing ALB (Application Load Balancer) for better traffic distribution.
-  - Private subnets for database instances for enhanced security.
+  - Implementing ALB (Application Load Balancer) for better traffic distribution across multiple regions. 
+  - Add automated cert rotation and validation through ACM. Allocate domains through Rotue53 or some thirdparty. 
+  - Private subnets for database instances for enhanced security and VPNS, along with transit gateways. 
+  - Github action workflows can be created to automatically version on release, passing version tags to the application via the revision variable.
+  - Docker builds, pushes to ECR, and ECS deployments can also be automated upon merge. 
