@@ -22,6 +22,6 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 3000
-#### Following best practice, gunicorn is used for production servers. Gevent is added to support aynchronous connection ####
+#### Following best practice, gunicorn is used for production servers. Gevent is added to support aynchronous connections ###
 ##### Log levels are set appropriately to ensure we have adequate visibility in to the behavior of our application ##########
 CMD ["gunicorn", "--worker-class", "gevent", "--workers", "4", "--log-level", "info", "--bind", "0.0.0.0:3000", "helloworld:app"]
