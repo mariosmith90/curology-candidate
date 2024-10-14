@@ -31,7 +31,6 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 - AWS CLI configured with proper access credentials.
 - Terraform installed and configured.
 - Docker and Docker Compose installed.
-- AWS Free Tier account.
 - Terraform state management bucket in S3.
 
 ---
@@ -47,7 +46,7 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 2. Set up AWS resources using Terraform:
     ```bash
     terraform init
-    terraform apply -var revision=v1.0 --var-file=dev.tfvars -lock=false
+    terraform apply -var revision=v1.0 --var-file=dev.tfvars
     ```
 
 3. Build Docker images locally for ARM64 architecture:
@@ -73,7 +72,7 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 
 2. Key Terraform command:
     ```bash
-    terraform apply -var revision=v1.0 --var-file=dev.tfvars -lock=false
+    terraform apply -var revision=v1.0 --var-file=dev.tfvars
     ```
 
 ---
