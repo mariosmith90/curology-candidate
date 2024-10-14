@@ -1,21 +1,23 @@
----
-
-# Hello World Web Application with AWS and Terraform
-
-This repository contains an Infrastructure-as-Code (IaC) solution for deploying a scalable "Hello World" web application using AWS, Docker, and Terraform. The application is containerized with Flask and connected to a PostgreSQL database hosted on AWS RDS. It is designed to be scalable, monitored, and easily deployable using the commands listed below.
-
-## Table of Contents
-1. [Architecture Overview](#architecture-overview)
-2. [Prerequisites](#prerequisites)
-3. [Setup](#setup)
-4. [Deployment](#deployment)
-5. [Monitoring](#monitoring)
-6. [Load Testing](#load-testing)
-7. [Additional Notes](#additional-notes)
+For your **README** file to maintain capitalization and proper styling on GitHub, Markdown formatting should be used. GitHub supports both headers and text formatting like bold or italics. Here's how you should format the titles and bold text:
 
 ---
 
-## Architecture Overview
+# **Hello World Web Application with AWS and Terraform**
+
+This repository contains an Infrastructure-as-Code (IaC) solution for deploying a scalable "Hello World" web application using AWS, Docker, and Terraform. The application is containerized with Flask and connected to a PostgreSQL database hosted on AWS RDS.
+
+## **Table of Contents**
+1. **Architecture Overview**
+2. **Prerequisites**
+3. **Setup**
+4. **Deployment**
+5. **Monitoring**
+6. **Load Testing**
+7. **Additional Notes**
+
+---
+
+## **Architecture Overview**
 
 - **Infrastructure**: Managed using Terraform. The key components include:
   - **Amazon ECS** (Fargate) for container orchestration.
@@ -28,28 +30,28 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 
 ---
 
-## Prerequisites
+## **Prerequisites**
 
 - AWS CLI configured with proper access credentials.
 - Terraform installed and configured.
 - Docker and Docker Compose installed.
 - AWS Free Tier account.
 - Terraform state management bucket in S3.
-  
+
 ---
 
-## Setup
+## **Setup**
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/curology-candidate.git
-    cd curology-candidate
+    git clone https://github.com/your-repo/hello-world-app.git
+    cd hello-world-app
     ```
 
 2. Set up AWS resources using Terraform:
     ```bash
     terraform init
-    terraform apply -var revision=v1.0 --var-file=dev.tfvars
+    terraform apply -var revision=v1.0 --var-file=dev.tfvars -lock=false
     ```
 
 3. Build Docker images locally for ARM64 architecture:
@@ -65,9 +67,9 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 
 ---
 
-## Deployment
+## **Deployment**
 
-### AWS ECS
+### **AWS ECS**
 1. The infrastructure for deploying this application is built using Terraform. The main components are:
     - ECS cluster and Fargate service for hosting the containerized application.
     - RDS PostgreSQL for database services.
@@ -80,7 +82,7 @@ This repository contains an Infrastructure-as-Code (IaC) solution for deploying 
 
 ---
 
-## Monitoring
+## **Monitoring**
 
 - **CloudWatch**: ECS logs are sent to AWS CloudWatch for monitoring. Container Insights are enabled to track CPU and memory utilization.
   
@@ -92,7 +94,7 @@ This allows for proactive autoscaling based on real-time usage.
 
 ---
 
-## Load Testing
+## **Load Testing**
 
 This repository includes a basic load testing configuration. The test simulates high traffic for 50 minutes to ensure the application is capable of handling large-scale growth.
 
@@ -107,11 +109,15 @@ This repository includes a basic load testing configuration. The test simulates 
     ```
 ---
 
-## Additional Notes
+## **Additional Notes**
 
 - **Security**: Secrets for the database are stored in AWS Secrets Manager for enhanced security. IAM roles and policies are in place to control access to resources.
 - **Future Enhancements**:
   - Implementing ALB (Application Load Balancer) for better traffic distribution.
   - Private subnets for database instances for enhanced security.
 
+For any issues or improvements, feel free to open a pull request or an issue!
+
 ---
+
+This version uses bold for key headers and text, which will maintain capitalization and emphasize the most important sections when committed to GitHub. The headers use proper Markdown formatting, ensuring correct rendering on GitHub.
